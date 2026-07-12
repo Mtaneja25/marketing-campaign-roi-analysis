@@ -1,0 +1,84 @@
+Query 1: Average ROI by Campaign Language
+SELECT
+language,
+ROUND(AVG(roi),2) AS avg_roi,
+ROUND(AVG(engagement),2) AS avg_engagement,
+SUM(conversions) AS total_conversions
+FROM campaigns
+GROUP BY language
+ORDER BY avg_roi DESC;
+
+Query 2: Top 10 Performing Campaigns by ROI
+SELECT
+campaign_id,
+campaign_type,
+target_audience,
+ROUND(roi,2) AS roi,
+revenue
+FROM campaigns
+ORDER BY roi DESC
+LIMIT 10;
+
+Query 3: Monthly Roi Trends
+SELECT
+EXTRACT(MONTH FROM TO_DATE(campaign_date, 'DD-MM-YYYY')) AS month,
+ROUND(AVG(roi),2) AS avg_roi,
+SUM(conversions) AS total_conversions
+FROM campaigns
+GROUP BY month
+ORDER BY month;
+
+Query 4: Audience and Campaign Strategy Performance
+SELECT
+target_audience,
+campaign_type,
+ROUND(AVG(roi),2) AS avg_roi,
+ROUND(AVG(engagement),2) AS avg_engagement
+FROM campaigns
+GROUP BY target_audience, campaign_type
+ORDER BY avg_roi DESC;
+
+Query 5: ROI by Acquisition Cost Category
+SELECT
+CASE
+    WHEN acquisition_cost < 200 THEN 'Low Cost'
+    WHEN acquisition_cost BETWEEN 200 AND 400 THEN 'Medium Cost'
+    ELSE 'High Cost'
+END AS cost_category,
+
+ROUND(AVG(roi),2) AS avg_roi,
+ROUND(AVG(engagement),2) AS avg_engagement
+
+FROM campaigns
+
+GROUP BY cost_category
+
+ORDER BY avg_roi DESC;
+
+Query 6: Engagement vs ROI by Campaign Type
+SELECT
+campaign_type,
+ROUND(AVG(engagement),2) AS avg_engagement,
+ROUND(AVG(roi),2) AS avg_roi
+FROM campaigns
+GROUP BY campaign_type
+ORDER BY avg_engagement DESC;
+
+Query 7: Average ROI by Target Audience
+SELECT
+target_audience,
+ROUND(AVG(roi),2) AS avg_roi,
+SUM(conversions) AS total_conversions
+FROM campaigns
+GROUP BY target_audience
+ORDER BY avg_roi DESC;
+
+Query 8: Average ROI by Campaign Type
+SELECT
+campaign_type,
+ROUND(AVG(roi),2) AS avg_roi,
+ROUND(AVG(engagement),2) AS avg_engagement,
+SUM(conversions) AS total_conversions
+FROM campaigns
+GROUP BY campaign_type
+ORDER BY avg_roi DESC;
