@@ -15,7 +15,7 @@ The dataset was analyzed using PostgreSQL and SQL, with the results visualized t
 
 ## Dashboard Preview
 
-![Marketing Campaign Performance & ROI Analysis](Marketing%20Campaign%20Performance%20%26%20ROI%20Analysis.png)
+![Marketing Campaign Performance & ROI Analysis](Marketing%20Campaign%20Performance%20%26%20ROI%20Analysis%20%282%29.png)
 
 ## Key Analysis
 
@@ -41,4 +41,4 @@ The dataset was analyzed using PostgreSQL and SQL, with the results visualized t
 
 ## Dashboard
 
-[View the Interactive Tableau Dashboard](https://public.tableau.com/views/MarketingCampaignPerformanceROIAnalysis/MarketingCampaignPerformanceROIAnalysis?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+[View the Interactive Tableau Dashboard](https://public.tableau.com:9443/views/MarketingCampaignPerformanceROIAnalysis/MarketingCampaignPerformanceROIAnalysis?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
